@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/bienvenida.css">
+   
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script> 
+
+<body  class="fondo4">
+    <div id="contenedor_carga">
+        <img src="img/logo.png" id="logoInicio">
+        <div id="preloader_2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+	</div>
+    <div data-role="page" id="inicio"> 
+        <div data-role="header" class="header">
+            Bienvenido
+        </div> 
+        <div data-role="content">
+            <p>
+                Hola, cuentanos más sobre tí, por favor contesta el siguiente formulario con tus datos
+                esto lo hacemos para tener una base para mejorar tus rutinas y alimentacion personalizada.
+            </p> 
+            <form >
+            <div data-role="fieldcontain">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" value="" required/>
+             </div>
+           
+            <div data-role="fieldcontain">
+                <label for="peso">Peso:</label>
+                <input type="range" name="peso" id="peso" value="40" min="0" max="160">
+            </div>
+            <div data-role="fieldcontain">
+                <label for="edad">Edad:</label>
+                <input type="range" name="edad" id="edad" value="10" min="0" max="100">
+            </div>
+            <div data-role="fieldcontain">
+                <label for="altura">Estatura:</label>
+                <input type="range" name="altura" id="altura" value="100" min="0" max="220">
+            </div>
+            <div data-role="fieldcontain">
+                <label for="experiencia">Conoces la calistenia:</label>
+                <select name="experiencia" id="experiencia" data-role="slider" data-mini="true">
+                    <option value="no">No</option>
+                    <option value="si" selected="">Yes</option>
+                </select>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <legend>Sexo:</legend>
+                        <input type="radio" name="sexo" id="hombre" value="hombre" checked="checked">
+                        <label for="hombre">Hombre</label>
+                        <input type="radio" name="sexo" id="mujer" value="mujer">
+                        <label for="mujer">Mujer</label>
+                </fieldset>
+            </div>
+            <a href="pruebas.html">next</a>
+            <button id="enviarDatos"> Hecho</button>
+        </form>
+        </div> 
+        <div data-role="footer">
+            hola
+        </div>
+       
+     </div>
+    <script type="text/javascript">
+		window.onload=function(){
+			setTimeout('ocultar()',2000);
+		}
+		function ocultar(){
+			var contenedor = document.getElementById('contenedor_carga');
+
+			contenedor.style.visibility='hidden';
+			contenedor.style.opacity='0';
+		}
+	</script>
+    <script src="js/bienvenida.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+
+</html>

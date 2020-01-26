@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/pruebas.css">
+    <link rel="stylesheet" href="css/temporizador.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+
+<body class="fondo4">
+    <div id="contenedor_carga">
+        <img src="img/logo.png" id="logoInicio">
+        <div id="preloader_2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div data-role="page" id="pruebas">
+        <div data-role="header" class="header">
+            Pruebas
+        </div>
+        <div data-role="content">
+            <p>
+                ¿No conoces tu estado físico actual?, no importa, hemos creado
+                un conjunto de pruebas de los ejercicios corporales básicos,
+                con los cuales trataremos de acomodarte tus rutinas de mejor
+                manera, cada ejercicio tendrá un tiempo de 30 segundos, en
+                los cuales harás la cantidad que puedas ¿Estás listo?, Vamos...
+            </p>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="collapsible" data-inset="true" data-shadow="false">
+                    <h2>Flexiones</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li>
+                            Las flexiones de brazos son un ejercicio muy común en cualquier disciplina deportiva,
+                            normalmente se utiliza
+                            para mejorar la condición física y poner a tono los músculos del tren superior.
+                            <img src="img/flexion.gif" alt="">
+                        </li>
+                        <li id="flexionPrueba">
+                            <a href="#flexiones">Comenzar prueba</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-inset="true" data-shadow="false">
+                    <h2>Sentadillas</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li>
+                            Una sentadilla es un ejercicio físico que se lleva a cabo para desarrollar los músculos y
+                            fortalecer los tendones
+                            y los ligamentos de las piernas. También permite tonificar los glúteos y aporta beneficios a
+                            la cadera.
+                            <img src="img/sentadilla.gif" alt="">
+                        </li>
+                        <li id="sentadillaPrueba">
+                            <a href="#sentadillas">Comenzar prueba</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-inset="true" data-shadow="false">
+                    <h2>Abdominales</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li>
+                            los ejercicios abdominales son rutinas de actividades físicas que se realizan con el
+                            objetivo de tonificar los músculos
+                            de la zona. Antes de la tonificación, es necesario eliminar la grasa que recubre dichos
+                            músculos, a través del ejercicio aeróbico y de una alimentación saludable.
+                            <img src="img/abdominal.gif" alt="">
+                        </li>
+                        <li id="abdominalesPrueba">
+                            <a href="#">Comenzar prueba</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-inset="true" data-shadow="false">
+                    <h2>Fondos</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li>
+                            El fondo es un ejercicio usado en el entrenamiento de la fuerza, desarrollan principalmente
+                            los tríceps, junto con músculos sinergísticos como los deltoides, los pectorales
+                            (esternales, claviculares y menores) y los músculos romboides de la espalda.
+                            <img src="img/fondo.gif" alt="">
+                        </li>
+                        <li id="fondosPrueba">
+                            <a href="#">Comenzar prueba</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                Nota: Si no quieres realizar los ejercicios, esta bien continua, tus rutinas se harán con base 
+                a el promedio de los datos generales.
+            </p>
+            <a href="Objetivo.html" data-role="button" data-icon="arrow-r" data-iconpos="right">Continuar </a>
+        </div>
+        <div data-role="footer">
+           
+        </div>
+
+    </div>
+    <div data-role="page" id="flexiones">
+        <div data-role="header" class="header">
+            Flexiones
+        </div>
+        <div data-role="content">
+            Tienes 30 segundos para realizar las flexiones que puedas, no importa si descansas
+            el objetivo es saber la cantidad que haces y así clasificarte en nuestro sistema
+            para poder personalizar tus rutinas de mejor manera, ¿Estas listo para la prueba?,
+            vamos, al terminar el tiempo sonará una alarma, así que no te preocupes por eso...
+            <hr>
+            <div class="chronometer">
+                <div id="screen" style="color: black;">00 : 00</div>
+                <div class="buttons">
+                    <button class="emerald" onclick="start()">&#9658;</button>
+                    <button class="emerald" onclick="stop()"> &#8718;</button>
+                    <button class="emerald" onclick="reset()"> &#8635;</button>
+                </div>
+                
+            </div>
+            <div id="res" style="visibility: hidden;">
+                <audio id="audio" controls style="visibility: hidden;">
+                <source type="audio/mp3" src="song/alarma.mp3">
+                </audio>
+
+                <p class="header">
+                    BIEN HECHO
+                </p>
+                <div data-role="fieldcontain">
+                    <label for="cantidadFlexiones">Cantidad de flexiones:</label>
+                    <input type="range" name="cantidadFlexiones" id="cantidadFlexiones" value="1" min="0" max="50">
+                </div>
+                <a href="#pruebas">
+                    Terminar
+                </a> 
+            </div>
+        </div>
+     </div>
+           
+        <div data-role="footer">
+         
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout('ocultar()', 2000);
+        }
+
+        function ocultar() {
+            var contenedor = document.getElementById('contenedor_carga');
+
+            contenedor.style.visibility = 'hidden';
+            contenedor.style.opacity = '0';
+        }
+    </script>
+    <script src="js/bienvenida.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/temporizador.js"></script>
+</body>
+
+</html>
